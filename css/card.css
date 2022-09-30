@@ -1,0 +1,99 @@
+
+
+
+.target{
+  --height: 220px;
+  --width: 700px;
+  --widthFoto: 250px;
+  position: relative;
+  box-shadow: 0 0 3px #bbb;
+  background-color: #fff;
+  height: var(--height);
+  width: var(--width);
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: var(--widthFoto) 1fr;
+  grid-template-rows: 50px 40px 1fr 50px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+/* IMAGEN */
+.target>img{
+  height: var(--height);
+  width: var(--widthFoto);
+  object-fit: cover;
+  grid-row: 1/5;
+  filter: brightness(92%);
+  clip-path: polygon(0% 0.3%, 100% 0%, 93.3% 100%, 0% 100%);
+}
+/* TITULO */
+.target>h3{
+  font-size: 1.8rem;
+  line-height: 60px;
+  padding-left: 12px;
+  font-family: Franklin Gothic;
+  font-weight: 700;
+}
+/* SUBTITULO */
+.target>h4{
+  display: inline-block;
+  position: relative;
+  padding-left: 12px;
+  text-transform: uppercase;
+  font-family: calibri;
+  font-weight: 200;
+  color: #aaa;
+  font-size: 1.1rem;
+}
+.target>h4::before{
+  bottom: 8px;
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 32px;
+  background-color: rgb(86, 212, 155);
+  border-radius: 4px;
+}
+/* CONTENIDO */
+.target> p{
+  padding: 0 12px;
+  font-family: Arial;
+  font-weight: 200;
+  color: #222;
+  font-size: 1rem;
+  text-align: justify;
+}
+/* LINK */
+.target>a{
+  text-align: end;
+  text-align: right;
+  padding-right: 34px;
+  color: rgb(86, 212, 155);
+  position: relative;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.target>a::before{
+  font-family: sans-serif;
+  position: absolute;
+  right: 15px;
+  bottom: 18.4px;
+  content: '';
+  height: 7px;
+  width: 7px;
+  border-right: 3.7px solid #56d49b;
+  border-top: 3.7px solid #56d49b;
+  transform: rotate(45deg);
+}
+.target>a::after{
+  font-family: sans-serif;
+  position: absolute;
+  right: 20px;
+  content: '';
+  height: 4px;
+  width: 10px;
+  background-color: #56d49b;
+  right: 18px;
+  bottom: 22px;
+}
