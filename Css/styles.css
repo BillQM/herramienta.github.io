@@ -1,5 +1,7 @@
 @import url(./button.css);
 @import url(./table.css);
+@import url(./card.css);
+
 body{
   overflow-x: hidden;
 }
