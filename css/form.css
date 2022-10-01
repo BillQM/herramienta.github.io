@@ -13,7 +13,16 @@
   justify-content: flex-start;
   flex-direction: column;
 }
-.form > img .img{
+.form > img{
+  height: 100px;
+  width: 100px;
+  object-fit: scale-down;
+  object-position: center;
+  border-radius: 50%;
+  background: #ecf0f3;
+  box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+}
+.form > .img{
   height: 100px;
   width: 100px;
   object-fit: scale-down;
