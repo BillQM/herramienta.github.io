@@ -1,10 +1,7 @@
-
-
-
-.target{
+.card{
   --height: 220px;
   --width: 700px;
-  --widthFoto: 250px;
+  --widthFoto: 260px;
   position: relative;
   box-shadow: 0 0 3px #bbb;
   background-color: #fff;
@@ -18,7 +15,7 @@
   overflow: hidden;
 }
 /* IMAGEN */
-.target>img{
+.card>img{
   height: var(--height);
   width: var(--widthFoto);
   object-fit: cover;
@@ -27,25 +24,25 @@
   clip-path: polygon(0% 0.3%, 100% 0%, 93.3% 100%, 0% 100%);
 }
 /* TITULO */
-.target>h3{
+.card>h3{
   font-size: 1.8rem;
   line-height: 60px;
-  padding-left: 12px;
+  padding: 0 14px;
   font-family: Franklin Gothic;
   font-weight: 700;
 }
 /* SUBTITULO */
-.target>h4{
+.card>h4{
   display: inline-block;
   position: relative;
-  padding-left: 12px;
+  padding: 0 14px;
   text-transform: uppercase;
   font-family: calibri;
   font-weight: 200;
   color: #aaa;
   font-size: 1.1rem;
 }
-.target>h4::before{
+.card>h4::before{
   bottom: 8px;
   position: absolute;
   content: '';
@@ -55,8 +52,8 @@
   border-radius: 4px;
 }
 /* CONTENIDO */
-.target> p{
-  padding: 0 12px;
+.card> p{
+  padding: 0 14px;
   font-family: Arial;
   font-weight: 200;
   color: #222;
@@ -64,21 +61,22 @@
   text-align: justify;
 }
 /* LINK */
-.target>a{
+.card>a{
   text-align: end;
   text-align: right;
   padding-right: 34px;
   color: rgb(86, 212, 155);
-  position: relative;
-  display: flex;
-  justify-content: right;
-  align-items: center;
+  position: absolute;
+  height: 29px;
+  width: 120px;
+  bottom: 0;
+  right: 0;
 }
-.target>a::before{
+.card>a::before{
   font-family: sans-serif;
   position: absolute;
   right: 15px;
-  bottom: 18.4px;
+  bottom: 13px;
   content: '';
   height: 7px;
   width: 7px;
@@ -86,7 +84,7 @@
   border-top: 3.7px solid #56d49b;
   transform: rotate(45deg);
 }
-.target>a::after{
+.card>a::after{
   font-family: sans-serif;
   position: absolute;
   right: 20px;
@@ -95,5 +93,85 @@
   width: 10px;
   background-color: #56d49b;
   right: 18px;
-  bottom: 22px;
+  bottom: 16.6px;
+}
+.card-reverse{
+  grid-template-columns: 1fr var(--widthFoto);
+}
+.card-reverse>img{
+  grid-column: 2/3;
+  clip-path: none;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 6% 100%);
+}
+.card-reverse>a{
+  right: none;
+  left: 0 !important;
+}
+/* CARD 2 */
+.card2{
+  --width: 540px;
+  --height: 320px;
+  --marginText:14px;
+  --paddingText: 19px;
+  --widthText: 46%;
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+  background-color: #ddd;
+  display: flex;
+  align-items: flex-start;
+  margin: 30px auto;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+}
+.card2> img{
+  object-fit: cover;
+  object-position: left;
+  position: absolute;
+  height: var(--height);
+  width: var(--width);
+  filter: brightness(78%);
+  opacity: .9;
+  transition: .2s ease-in-out;
+}
+.card2> img:hover{
+  transform: scale(1.2);
+}
+.card2>h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--widthText);
+  background-color: #fff;
+  color: #000;
+  mix-blend-mode: screen;
+  font-family: Arial Narrow;
+  font-weight: bold;
+  line-height: 45px;
+  font-size: 44px;
+  flex-grow: 2;
+  margin-top: var(--marginText);
+  margin-left: var(--marginText);
+  padding: var(--paddingText);
+  text-align: center;
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+.card2>p{
+  width: var(--widthText);
+  background-color: #fff;
+  color: #000;
+  mix-blend-mode: screen;
+  flex-grow: .5;
+  margin-bottom: var(--marginText);
+  margin-left: var(--marginText);
+  text-align: left;
+  padding: var(--paddingText);
+  font-family: calibri;
+  font-size: 16px;
+  font-weight: 400;
+  pointer-events: none;
 }
